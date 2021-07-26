@@ -349,12 +349,16 @@ div.redbox:before {
 div.tips {
   border: 1px dashed var(--fg);
 }
-div.tips p:last-of-type {
+div.tips>p:last-of-type {
   margin-bottom:0;
 }
 div.tips>p:first-child {
   margin-top:0;
   font-weight:bold;
+}
+div.tips p.ref {
+  text-align:right;
+  font-size:calc( var(--font-size) * 0.9);
 }
 
 div.note {
