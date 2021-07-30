@@ -1035,10 +1035,10 @@ li:last-child {
   font-weight: bold;
   text-align: center;
   margin: 2rem 0;
-  padding: 1rem 0;
+  padding: 2rem;
 }
 .situgi h4 {
-  padding: 0;
+  padding: 1rem;
 }
 
 h3 + div.balloon,
@@ -1272,9 +1272,17 @@ div.recent-updated ul li {
   margin: 0;
 }
 #toc>ul {
-  padding: 0 2rem;
+  padding: 0 1rem 0 2rem;
 }
 #toc li, #toc ul, #toc ul li{
-  list-style: outside none none !important;
-  margin-bottom:0;
+  margin-bottom:1rem;
+}
+
+.gc-wrapper {
+  overflow-x:auto;
+  padding:10px 10px 10px 0;
+}
+.gc-wrapper>div {
+  width:700px;
+  height:450px;
 }
