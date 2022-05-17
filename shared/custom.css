@@ -1230,6 +1230,7 @@ span.q-a {
 .child-tab input:checked ~ .acd-sub-content{
   max-height: 200vh;
 }
+.tab-4 input:checked ~ .acd-content,
 .tab-3 input:checked ~ .acd-content,
 .tab-2 input:checked ~ .acd-content,
 .tab-1 input:checked ~ .acd-content {
