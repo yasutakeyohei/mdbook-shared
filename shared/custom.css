@@ -5,23 +5,47 @@
 .font-family-mincho { font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", "serif"; }
 .font-family-uiprop { font-family: "Meiryo UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "MS PGothic", "sans-serif"; }
 
-.line-height-0 { --line-height: 3.0rem; --line-height-chapter: 1.5em; }
-.line-height-1 { --line-height: 3.5rem; --line-height-chapter: 3.5rem; }
-.line-height-2 { --line-height: 4.5rem; --line-height-chapter: 4.5rem; }
-.line-height-3 { --line-height: 5.5rem; --line-height-chapter: 5.5rem; }
-.line-height-4 { --line-height: 6.5rem; --line-height-chapter: 6.5rem; }
+
+.font-size-0 { --font-size: 0.8rem; }
+.font-size-1 { --font-size: 1rem; }
+.font-size-2 { --font-size: 1.2rem; }
+.font-size-3 { --font-size: 1.4rem; }
+.font-size-4 { --font-size: 1.6rem; }
+.line-height-0 { --line-height: 2.2rem; --line-height-chapter: 0.9em; }
+.line-height-1 { --line-height: 2.9rem; --line-height-chapter: 2.9rem; }
+.line-height-2 { --line-height: 3.9rem; --line-height-chapter: 3.9rem; }
+.line-height-3 { --line-height: 4.9rem; --line-height-chapter: 4.9rem; }
+.line-height-4 { --line-height: 5.9rem; --line-height-chapter: 5.9rem; }
+@media only screen and (min-width: 680px) {
+  .font-size-0 { --font-size: 0.9rem; }
+  .font-size-1 { --font-size: 1.1rem; }
+  .font-size-2 { --font-size: 1.3rem; }
+  .font-size-3 { --font-size: 1.5rem; }
+  .font-size-4 { --font-size: 1.7rem; }
+  .line-height-0 { --line-height: 3.0rem; --line-height-chapter: 1.5em; }
+  .line-height-1 { --line-height: 3.5rem; --line-height-chapter: 3.5rem; }
+  .line-height-2 { --line-height: 4.5rem; --line-height-chapter: 4.5rem; }
+  .line-height-3 { --line-height: 5.5rem; --line-height-chapter: 5.5rem; }
+  .line-height-4 { --line-height: 6.5rem; --line-height-chapter: 6.5rem; }
+}
+@media only screen and (min-width: 800px) {
+  .font-size-0 { --font-size: 1rem; }
+  .font-size-1 { --font-size: 1.2rem; }
+  .font-size-2 { --font-size: 1.4rem; }
+  .font-size-3 { --font-size: 1.6rem; }
+  .font-size-4 { --font-size: 1.8rem; }
+  .line-height-0 { --line-height: 3.0rem; --line-height-chapter: 1.5em; }
+  .line-height-1 { --line-height: 3.5rem; --line-height-chapter: 3.5rem; }
+  .line-height-2 { --line-height: 4.5rem; --line-height-chapter: 4.5rem; }
+  .line-height-3 { --line-height: 5.5rem; --line-height-chapter: 5.5rem; }
+  .line-height-4 { --line-height: 6.5rem; --line-height-chapter: 6.5rem; }
+}
 
 .letter-spacing-0 { --letter-spacing: 0rem; }
 .letter-spacing-1 { --letter-spacing: 0.4rem; }
 .letter-spacing-2 { --letter-spacing: 0.8rem; }
 .letter-spacing-3 { --letter-spacing: 1.0rem; }
 .letter-spacing-4 { --letter-spacing: 1.2rem; }
-
-.font-size-0 { --font-size: 1.7rem; }
-.font-size-1 { --font-size: 1.9rem; }
-.font-size-2 { --font-size: 2.1rem; }
-.font-size-3 { --font-size: 2.3rem; }
-.font-size-4 { --font-size: 2.5rem; }
 
 html {
   font-family: "UD デジタル 教科書体 N-R", "UDデジタル教科書体 R", "BIZ UDゴシック Regular", "Hiragino Kaku Gothic ProN", "ascii";
@@ -30,35 +54,46 @@ html {
 body {
   -webkit-text-size-adjust: 100%;
   /* iPhoneでフォントサイズが勝手に変わるのを阻止 */
-  font-size: var(--font-size);
+  font-size: calc(var(--font-size)*1.7);
 }
 
+/* mobile */
 h1 {
-  font-size: 1.8em; /*1.8em*/
+  font-size: 1.6rem;
 }
-
 main h1 {
-  margin-top: 0;
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 3.2rem;
 }
+main h2 { font-size: calc(var(--font-size)*1.9); }
+main h3 { font-size: calc(var(--font-size)*1.2); }
+main h4 { font-size: calc(var(--font-size)*1.1); }
+main h5 { font-size: var(--font-size); }
+main h6 { font-size:  calc(var(--font-size)*0.9); }
+.ippan-situgi h3+h4 { margin-top:-4rem; }
+.ippan-situgi h4+h5 { margin-top:-4rem; }
+.ippan-situgi h5+h6 { margin-top:-4rem; }
 
-h2 {
-  font-size: 1.6em;
-}
+@media only screen and (min-width: 800px) {
+  h1 {
+    font-size: 2.45rem;
+  }
+  main h1 {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    line-height: 7rem;
+  }
+  main h2 { font-size: 2.2rem; }
+  main h3 { font-size:  calc(var(--font-size)*1.2); }
+  main h4 { font-size:  calc(var(--font-size)*1.1); }
+  main h5 { font-size:  var(--font-size); }
+  main h6 { font-size:  calc(var(--font-size)*0.9); }
 
-h3 {
-  font-size: 1.4em;
-}
-
-h4 {
-  font-size: 1.2em;
-}
-
-h5 {
-  font-size: 1em;
-}
-
-h6 {
-  font-size: 0.9em;
+  .ippan-situgi h3+h4 { margin-top:-4rem; }
+  .ippan-situgi h4+h5 { margin-top:-4rem; }
+  .ippan-situgi h5+h6 { margin-top:-4rem; }
 }
 
 button {
@@ -70,6 +105,12 @@ button {
 .content {
   letter-spacing: var(--letter-spacing);
   text-align: justify;
+  padding: 0 5px !important;
+}
+@media only screen and (min-width: 800px) {
+  .content {
+    padding: 0 15px !important;
+  } 
 }
 
 .content p {
@@ -101,7 +142,7 @@ p.breadcrumbs {
   margin: 0;
   background-color: var(--sidebar-bg);
   color: var(--sidebar-fg);
-  font-size: 1.5rem;
+  font-size: calc(var(--font-size)*0.85);
 }
 
 p.breadcrumbs a {
@@ -124,8 +165,14 @@ table {
 /* point, nittei, sanpi, summary */
 fieldset.pnt {
   margin-top: 0;
-  padding: 0rem 3rem;
+  padding: 0rem 1rem;
 }
+@media only screen and (min-width: 800px) {
+  fieldset.pnt {
+    padding: 0rem 3rem;
+  }
+}
+
 fieldset.sanpi {
   margin-top: 4rem;
   margin-bottom: 4rem;
@@ -168,7 +215,7 @@ fieldset.summary {
   padding-left: 4rem;
 }
 .pnt li {
-  text-indent: -2.6rem;
+  text-indent: -2.0rem;
   padding-left: 1.5rem;
 }
 .sanpi li {
@@ -256,8 +303,17 @@ fieldset.nittei {
 }
 
 #read-kaigiroku {
+  position: relative;
+  top:1rem;
+  font-size: 1.2rem;
   text-align: right;
-  margin: 0;
+  margin: -1rem 0 0 0;
+}
+@media only screen and (min-width: 800px) {
+  #read-kaigiroku {
+    top:1.6rem;
+    font-size: 1.5rem;
+  }
 }
 
 li.chapter-item {
@@ -342,8 +398,8 @@ input.gridjs-input {
 div.redbox,
 div.tips {
   border-radius: 1rem;
-  margin: calc(var(--line-height)*1.5) 0;
-  padding: 1rem 2rem;
+  margin: 0 3rem 4rem 3rem;
+  padding: 2rem 4rem;
 }
 div.redbox:before,
 div.tips:before {
@@ -397,7 +453,7 @@ ul.published-at-updated-at {
   /* gap: 0 2rem; safari does not support this yet */
   margin: 0 0 2px 0;
   list-style-type: none;
-  font-size: 1.5rem;
+  font-size: calc(var(--font-size)*0.85);
   color: gray;
 }
 ul.published-at-updated-at li {
@@ -587,8 +643,85 @@ p.img-wrapper {
   padding: 2rem 0;
 }
 
-/* fukidasi */
+/* 吹き出し本体 */
 /* https://blog.n-ista.org/2019/01/csslineblogger.html */
+/* https://blog.codecamp.jp/css_balloon */
+
+.bln {
+  border-radius: 10px;
+  font-size: calc(var(--font-size)*0.94);
+  position: relative;
+  padding: 2rem;
+  max-width: 90%;
+}
+@media only screen and (min-width: 800px) {
+  .bln {
+      max-width: 66%;
+  }
+}
+.bln.bleft {
+  background-color: var(--situgi-q-bg);
+  margin: 0 auto 5rem 4%;
+}
+.bln.bright {
+  background-color: var(--situgi-a-bg);
+  margin: 0 4% 5rem auto;
+}
+
+/* 吹き出し三角部分 */
+.bln::before{
+  border-style: solid;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 12px;
+}
+.bln.bleft::before {
+  border-color: transparent var(--situgi-q-bg) transparent transparent;
+  border-width: 7px 15px 7px 0;
+  left: -15px;
+}
+.bln.bright::before {
+  border-color: transparent transparent transparent var(--situgi-a-bg);
+  border-width: 7px 0 7px 15px;
+  right: -15px;
+}
+
+/* 吹き出し話者部分 */
+.bln::after {
+  content: attr(data-speaker);
+  font-size: calc(var(--font-size)*0.77);
+  position: absolute;
+  top: -1.5rem;
+  white-space:nowrap;
+}
+.bln.bleft::after {
+  left: 0.5rem; 
+}
+.bln.bright::after {
+  right: -0.5rem;
+  text-align:right;
+}
+
+/* 吹き出し内部 */
+.bln p {
+  margin: 0;
+}
+
+/* 吹き出しthougt　*/
+.bln.bleft.thought {
+  border: 6px dotted var(--situgi-q-bg-dark);
+  background-color:unset;
+}
+.bln.bleft.thought::before {
+  border-width: 0;
+  content: "🤔";
+  left: -3rem;
+  top:0;
+}
+
 
 .balloon {
   font-size: calc(var(--font-size)*0.77);
@@ -675,7 +808,17 @@ blockquote .balloon.bl-left>div:after {
 }
 .balloon.bl-tips>div p:first-of-type {
   margin-top: 0;
-  font-weight: bold;
+}
+
+
+.balloon.bl-left.thought>div {
+  border: 6px dotted var(--situgi-q-bg-dark);
+  background-color:unset;
+}
+.balloon.bl-left.thought>div:after {
+  border-width: 0;
+  content: "🤔";
+  left: -8px;
 }
 
 .balloon span.yasutake {
@@ -688,6 +831,12 @@ blockquote .balloon.bl-left>div:after {
 hr.balloon-divider {
   margin: 3rem 1rem;
 }
+
+
+
+
+
+
 
 /* table bordered */
 table.bordered thead th {
@@ -722,6 +871,7 @@ td.aright {
 .light {
   --point-fg: #000094;
   --situgi-q-bg: #ffefd5;
+  --situgi-q-bg-dark: #fdb94c;
   --situgi-a-bg: #E7F7EE;
   --a11y-icon-fg: mediumseagreen;
   --toc-bg: #f9f9f9;
@@ -738,6 +888,7 @@ td.aright {
 
 .rust {
   --situgi-q-bg: var(--quote-bg);
+  --situgi-q-bg-dark: #a1a19c;
   --situgi-a-bg: var(--quote-bg);
   --a11y-icon-fg: green;
   --toc-bg: #eaeae3;
@@ -745,6 +896,7 @@ td.aright {
 
 .coal {
   --situgi-q-bg: var(--quote-bg);
+  --situgi-q-bg-dark: #6b728b;
   --situgi-a-bg: var(--quote-bg);
   --a11y-icon-fg: yellowgreen;
   --toc-bg: #000;
@@ -752,6 +904,7 @@ td.aright {
 
 .navy {
   --situgi-q-bg: var(--quote-bg);
+  --situgi-q-bg-dark: #6b728b;
   --situgi-a-bg: var(--quote-bg);
   --a11y-icon-fg: aquamarine;
   --toc-bg: #000;
@@ -760,6 +913,7 @@ td.aright {
 .ayu {
   --point-fg: #fff;
   --situgi-q-bg: var(--quote-bg);
+  --situgi-q-bg-dark: #6b728b;
   --situgi-a-bg: var(--quote-bg);
   --a11y-icon-fg: aquamarine;
   --toc-bg: #000;
@@ -838,6 +992,12 @@ span.highlight {
 blockquote > h2 {
   font-size:1.2em;
   margin:1.2em 0;
+}
+
+blockquote p.ref {
+  text-align: right;
+  margin-bottom: 0;
+  font-size: 0.8em;
 }
 
 /* custom fonts */
@@ -989,22 +1149,21 @@ blockquote > h2 {
 /* a11y用 */
 h1, h2, h3, h4, h5, h6,
 .back-to-main-site {
-  line-height: calc( var(--line-height)*1.5);
+  line-height: calc( var(--line-height));
   letter-spacing: var(--letter-spacing);
 }
 li {
   line-height: var(--line-height);
   letter-spacing: var(--letter-spacing);
-  margin-bottom: calc(var(--line-height)*0.5);
 }
 li:last-child {
   margin-bottom: 0;
 }
 .chapter li,
 .chapter li.chapter-item {
-  line-height: var(--line-height);
-  letter-spacing: var(--letter-spacing);
-  margin-bottom:0;
+  line-height: calc(var(--line-height)*0.7) !important;
+  letter-spacing: var(--letter-spacing) !important;
+  margin-bottom:0 !important;
 }
 
 
@@ -1047,6 +1206,10 @@ li:last-child {
 }
 
 /* 一般質問での質疑 */
+.ippan-situgi {
+  display: flex;
+  flex-direction: column;
+}
 .ippan-situgi h3,
 .ippan-situgi h4,
 .ippan-situgi h5 {
@@ -1056,8 +1219,8 @@ li:last-child {
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
-  margin: 2rem 0;
-  padding: 2rem;
+  margin: 0 0 6rem 0;
+  padding: calc(var(--font-size)*1.2);
 }
 .ippan-situgi h4 {
   padding: 1rem;
@@ -1066,20 +1229,21 @@ li:last-child {
 .ippan-situgi h5 {
   padding: 1rem;
   border-style: none;
-  border-bottom-style: dashed;
+  border-bottom-style: dotted;
+  border-radius:0;
 }
 
 /* 通常の質疑（本会議、委員会で分けているため、一段下げる） */
 .situgi h4,
 .situgi h5,
 .situgi h6 {
-  font-size: var(--font-size);
+  font-size: calc(var(--font-size)*1.7);
   line-height: var(--line-height);
   border: 1px solid var(--fg);
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
-  margin: 2rem 0;
+  margin-bottom: 2rem;
   padding: 2rem;
 }
 .situgi h5 {
@@ -1183,7 +1347,7 @@ span.q-a {
 }
 .acd-wrapper label span{
   color: var(--bg);
-  font-size: calc(var(--font-size)*1.1);
+  font-size: calc(var(--font-size)*1.7*1.1);
   font-weight: 500;
   text-shadow: 0 -1px 1px var(--links);
 }
@@ -1191,13 +1355,13 @@ span.q-a {
   color: var(--bg) !important;
 }
 .acd-wrapper .child-tab label span{
-  font-size: calc(var(--font-size)*1.05);
+  font-size: calc(var(--font-size)*1.7*1.05);
 }
 .parent-tab label .icon{
   position: relative;
-  height: calc(var(--font-size)*1.6);
-  width:  calc(var(--font-size)*1.6);
-  font-size: var(--font-size);
+  height: calc(var(--font-size)*1.7*1.6);
+  width:  calc(var(--font-size)*1.7*1.6);
+  font-size: calc(var(--font-size)*1.7);
   color: var(--links);
   display: block;
   background: var(--bg);
@@ -1239,10 +1403,10 @@ span.q-a {
 .parent-tab .acd-content p,
 .child-tab .acd-sub-content p{
   padding: 15px 20px;
-  font-size: var(--font-size);
+  font-size: calc(var(--font-size)*1.7);
 }
 .child-tab .acd-sub-content p{
-  font-size: var(--font-size);
+  font-size: calc(var(--font-size)*1.7);
 }
 input[type="radio"],
 input[type="checkbox"]{
@@ -1265,7 +1429,7 @@ input[type="checkbox"]{
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: var(--font-size);
+  font-size: calc(var(--font-size)*1.7);
   margin: 3rem 2px 0;
   transition-duration: 0.4s;
   cursor: pointer;
@@ -1365,7 +1529,7 @@ div.recent-updated ul li {
   border-top: 1px solid var(--links);
   border-bottom: none;
   color: var(--links);
-  font-size: calc(var(--font-size)*0.8);
+  font-size: calc(var(--font-size)*1.7*0.8);
 }
 .toc>p.toc-note i {
   color: royalblue;
