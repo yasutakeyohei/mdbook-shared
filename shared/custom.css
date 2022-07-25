@@ -6,7 +6,7 @@
 .font-family-uiprop { font-family: "Meiryo UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", "MS PGothic", "sans-serif"; }
 
 
-.font-size-0 { --font-size: 0.8rem; }
+.font-size-0 { --font-size: 0.85rem; }
 .font-size-1 { --font-size: 1rem; }
 .font-size-2 { --font-size: 1.2rem; }
 .font-size-3 { --font-size: 1.4rem; }
@@ -16,6 +16,7 @@
 .line-height-2 { --line-height: 3.9rem; --line-height-chapter: 3.9rem; }
 .line-height-3 { --line-height: 4.9rem; --line-height-chapter: 4.9rem; }
 .line-height-4 { --line-height: 5.9rem; --line-height-chapter: 5.9rem; }
+.letter-spacing-0 { --letter-spacing: 0.02rem; }
 @media only screen and (min-width: 680px) {
   .font-size-0 { --font-size: 0.9rem; }
   .font-size-1 { --font-size: 1.1rem; }
@@ -39,13 +40,12 @@
   .line-height-2 { --line-height: 4.5rem; --line-height-chapter: 4.5rem; }
   .line-height-3 { --line-height: 5.5rem; --line-height-chapter: 5.5rem; }
   .line-height-4 { --line-height: 6.5rem; --line-height-chapter: 6.5rem; }
+  .letter-spacing-0 { --letter-spacing: 0; }
 }
 
-.letter-spacing-0 { --letter-spacing: 0rem; }
-.letter-spacing-1 { --letter-spacing: 0.4rem; }
-.letter-spacing-2 { --letter-spacing: 0.8rem; }
-.letter-spacing-3 { --letter-spacing: 1.0rem; }
-.letter-spacing-4 { --letter-spacing: 1.2rem; }
+.letter-spacing-2 { --letter-spacing: 0.4rem; }
+.letter-spacing-3 { --letter-spacing: 0.6rem; }
+.letter-spacing-4 { --letter-spacing: 1rem; }
 
 html {
   font-family: "UD デジタル 教科書体 N-R", "UDデジタル教科書体 R", "BIZ UDゴシック Regular", "Hiragino Kaku Gothic ProN", "ascii";
@@ -57,50 +57,51 @@ body {
   font-size: calc(var(--font-size)*1.7);
 }
 
-/* mobile */
-h1 {
-  font-size: 1.6rem;
+h1.menu-title {
+  font-size:  calc(var(--font-size)*2);
 }
+
+main h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
 main h1 {
-  font-size: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  line-height: 3.2rem;
+  font-size: calc(var(--font-size)*2.4);
+  margin-top: calc(var(--font-size)*2.5);
+  margin-bottom: calc(var(--font-size)*2);
+  line-height: calc(var(--font-size)*4);
 }
-main h2 { font-size: calc(var(--font-size)*1.9); }
-main h3 { font-size: calc(var(--font-size)*1.2); }
-main h4 { font-size: calc(var(--font-size)*1.1); }
-main h5 { font-size: var(--font-size); }
-main h6 { font-size:  calc(var(--font-size)*0.9); }
-.ippan-situgi h3+h4 { margin-top:-4rem; }
-.ippan-situgi h4+h5 { margin-top:-4rem; }
-.ippan-situgi h5+h6 { margin-top:-4rem; }
 
-@media only screen and (min-width: 800px) {
-  h1 {
-    font-size: 2.45rem;
-  }
-  main h1 {
-    margin-top: 1rem;
-    margin-bottom: 0;
-    line-height: 7rem;
-  }
-  main h2 { font-size: 2.2rem; }
-  main h3 { font-size:  calc(var(--font-size)*1.2); }
-  main h4 { font-size:  calc(var(--font-size)*1.1); }
-  main h5 { font-size:  var(--font-size); }
-  main h6 { font-size:  calc(var(--font-size)*0.9); }
+main h2 { font-size: calc(var(--font-size)*2.2); }
+main h3 { font-size: calc(var(--font-size)*1.8); }
+main h4 { font-size: calc(var(--font-size)*1.7); }
+main h5 { font-size: calc(var(--font-size)*1.6); }
+main h6 { font-size:  calc(var(--font-size)*1.5); }
 
-  .ippan-situgi h3+h4 { margin-top:-4rem; }
-  .ippan-situgi h4+h5 { margin-top:-4rem; }
-  .ippan-situgi h5+h6 { margin-top:-4rem; }
+.ippan-situgi h3+h4,
+.ippan-situgi h4+h5,
+.ippan-situgi h5+h6,
+.ippan-situgi h3+p,
+.ippan-situgi h4+p,
+.ippan-situgi h5+p,
+.ippan-situgi h3+ul,
+.ippan-situgi h4+ul,
+.ippan-situgi h5+ul, 
+.ippan-situgi h3+div,
+.ippan-situgi h4+div,
+.ippan-situgi h5+div { margin-top: calc(var(--font-size)*-4); }
+
+.ippan-situgi div.bln+h3,
+.ippan-situgi div.bln+h4,
+{
+  margin-top: calc(var(--font-size));
 }
 
 button {
   line-height: unset;
   letter-spacing: unset;
   font: unset;
-  font-size: calc(var(--font-size)*0.79);
+  font-size: calc(var(--font-size)*1.7);
 }
 .content {
   letter-spacing: var(--letter-spacing);
@@ -142,7 +143,7 @@ p.breadcrumbs {
   margin: 0;
   background-color: var(--sidebar-bg);
   color: var(--sidebar-fg);
-  font-size: calc(var(--font-size)*0.85);
+  font-size: calc(var(--font-size)*1.5);
 }
 
 p.breadcrumbs a {
@@ -165,6 +166,7 @@ table {
 /* point, nittei, sanpi, summary */
 fieldset.pnt {
   margin-top: 0;
+  margin-bottom: calc(var(--font-size)*2);
   padding: 0rem 1rem;
 }
 @media only screen and (min-width: 800px) {
@@ -172,6 +174,7 @@ fieldset.pnt {
     padding: 0rem 3rem;
   }
 }
+
 
 fieldset.sanpi {
   margin-top: 4rem;
@@ -217,6 +220,11 @@ fieldset.summary {
 .pnt li {
   text-indent: -2.0rem;
   padding-left: 1.5rem;
+  padding-bottom: calc(var(--font-size)*1.5);
+}
+.pnt li a:link,
+.pnt li a:visited {
+    color: var(--pnt-li-a-links) !important;
 }
 .sanpi li {
   text-indent: -3.5rem;
@@ -305,14 +313,14 @@ fieldset.nittei {
 #read-kaigiroku {
   position: relative;
   top:1rem;
-  font-size: 1.2rem;
+  font-size: calc(var(--font-size)*1.2);
   text-align: right;
   margin: -1rem 0 0 0;
 }
 @media only screen and (min-width: 800px) {
   #read-kaigiroku {
     top:1.6rem;
-    font-size: 1.5rem;
+    font-size: calc(var(--font-size)*1.5);
   }
 }
 
@@ -398,8 +406,18 @@ input.gridjs-input {
 div.redbox,
 div.tips {
   border-radius: 1rem;
-  margin: 0 3rem 4rem 3rem;
-  padding: 2rem 4rem;
+}
+div.redbox,
+div.tips {
+  margin: 0 0 4rem 0;
+  padding: 2rem 1.5rem;
+}
+@media only screen and (min-width: 800px) {
+  div.redbox,
+  div.tips {
+    margin: 0 3rem 4rem 3rem;
+    padding: 2rem 4rem;
+  }
 }
 div.redbox:before,
 div.tips:before {
@@ -453,7 +471,7 @@ ul.published-at-updated-at {
   /* gap: 0 2rem; safari does not support this yet */
   margin: 0 0 2px 0;
   list-style-type: none;
-  font-size: calc(var(--font-size)*0.85);
+  font-size: calc(var(--font-size)*1.4);
   color: gray;
 }
 ul.published-at-updated-at li {
@@ -649,7 +667,6 @@ p.img-wrapper {
 
 .bln {
   border-radius: 10px;
-  font-size: calc(var(--font-size)*0.94);
   position: relative;
   padding: 2rem;
   max-width: 90%;
@@ -692,9 +709,9 @@ p.img-wrapper {
 /* 吹き出し話者部分 */
 .bln::after {
   content: attr(data-speaker);
-  font-size: calc(var(--font-size)*0.77);
+  font-size: calc(var(--font-size)*1.4);
   position: absolute;
-  top: -1.5rem;
+  top: calc(var(--font-size)*-1.8);
   white-space:nowrap;
 }
 .bln.bleft::after {
@@ -710,16 +727,27 @@ p.img-wrapper {
   margin: 0;
 }
 
-/* 吹き出しthougt　*/
-.bln.bleft.thought {
+/* 吹き出しthougt, smile　*/
+.bln.bleft.thought,
+.bln.bleft.smile {
   border: 6px dotted var(--situgi-q-bg-dark);
   background-color:unset;
 }
-.bln.bleft.thought::before {
+.bln.bleft.thought::before,
+.bln.bleft.smile::before {
   border-width: 0;
   content: "🤔";
-  left: -3rem;
+  left: -2.5rem;
   top:0;
+}
+.bln.bleft.smile::before {
+  content: "🙂";
+}
+@media only screen and (min-width: 800px) {
+  .bln.bleft.thought::before,
+  .bln.bleft.smile::before {
+    left: -3rem;
+  }
 }
 
 
@@ -964,10 +992,12 @@ table.th-wrap th {
   white-space: initial;
 }
 
+/*
 div.table-wrapper {
   overflow-x: auto;
   white-space: nowrap;
 }
+*/
 
 table.book {
   width: 100%;
@@ -995,10 +1025,20 @@ blockquote > h2 {
 }
 
 blockquote p.ref {
-  text-align: right;
+  border-top: 1px dashed var(--fg);
+  font-size: calc(var(--font-size)*1.5);
+  border-top: 1px dashed var(--fg);
+  margin-top: calc(var(--font-size));
+  padding-top: calc(var(--font-size)*0.3);
   margin-bottom: 0;
-  font-size: 0.8em;
 }
+
+
+div.ref li {
+  margin-bottom: calc(var(--font-size)*0.5);
+  font-size: calc(var(--font-size)*1.5);
+}
+
 
 /* custom fonts */
 @font-face {
@@ -1213,13 +1253,12 @@ li:last-child {
 .ippan-situgi h3,
 .ippan-situgi h4,
 .ippan-situgi h5 {
-  font-size: var(--font-size);
-  line-height: var(--line-height);
+/*  line-height: var(--line-height);*/
   border: 1px solid var(--fg);
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
-  margin: 0 0 6rem 0;
+  margin-bottom: calc(var(--font-size)*6);
   padding: calc(var(--font-size)*1.2);
 }
 .ippan-situgi h4 {
@@ -1430,7 +1469,7 @@ input[type="checkbox"]{
   text-decoration: none;
   display: inline-block;
   font-size: calc(var(--font-size)*1.7);
-  margin: 3rem 2px 0;
+  margin-bottom: calc(var(--font-size)*5);
   transition-duration: 0.4s;
   cursor: pointer;
   border: 1px solid var(--fg);
@@ -1478,7 +1517,7 @@ div.recent-updated ul li {
   background: var(--toc-bg) none repeat scroll 0 0;
   border: 1px solid #aaa;
   display: table;
-  font-size: 95%;
+  font-size: calc(var(--font-size)*1.7);
   margin: 0 auto 3rem;
   padding: 2rem;
   width: auto;
@@ -1499,7 +1538,11 @@ div.recent-updated ul li {
   padding: 0 1rem 0 2rem;
 }
 .toc li, .toc ul, .toc ul li{
-  margin-bottom:1rem;
+  margin-bottom:calc(var(--font-size)*0.75);
+}
+.toc li strong {
+  margin-bottom:calc(var(--font-size)*0.9);
+ 
 }
 .toc li.hitori,
 .toc li.tips {
