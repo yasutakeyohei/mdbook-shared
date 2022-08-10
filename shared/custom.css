@@ -90,6 +90,7 @@ main h6 { font-size:  calc(var(--font-size)*1.5); }
 .ippan-situgi h3+div,
 .ippan-situgi h4+div,
 .ippan-situgi h5+div { margin-top: calc(var(--font-size)*-4); }
+.ippan-situgi h3+p+div.bln.bleft { margin-top: calc(var(--font-size)*4); }
 
 .ippan-situgi div.bln+h3,
 .ippan-situgi div.bln+h4　{
@@ -329,7 +330,8 @@ li.chapter-item {
 }
 
 li.chapter-item strong {
-  display: none;
+  /*scrollIntoView not working if display:none; */
+  font-size: 0;
 }
 
 ol.section li.chapter-item {
@@ -951,14 +953,14 @@ td.aright {
 
 /* dyslexia CUSTOM */
 figure {
-  margin: 3rem 0;
+  margin: 2rem 0;
   text-align: center;
   padding: 1rem;
 }
 figure figcaption {
   padding: 1rem;
-  font-size: calc(var(--font-size) * 0.8);
-  line-height: calc(var(--line-height) * 0.8);
+  font-size: calc(var(--font-size) * 1.5);
+  padding:0;
   text-align: center;
 }
 figure.bordered {
