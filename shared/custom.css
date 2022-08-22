@@ -80,8 +80,9 @@ main h6 { font-size:  calc(var(--font-size)*1.5); }
 
 
 h2#提案理由の説明,
+h2#提出者代表議員の説明,
 h2#資料,
-h2#主な質疑本会議付託委員会,
+h2#主な質疑,
 h2#付託委員会での取り扱い,
 h2#本会議での主なやり取り,
 h2#賛否一覧 {
@@ -89,8 +90,9 @@ h2#賛否一覧 {
   align-items: center;
 }
 h2#提案理由の説明::before,
+h2#提出者代表議員の説明::before,
 h2#資料::before,
-h2#主な質疑本会議付託委員会::before,
+h2#主な質疑::before,
 h2#付託委員会での取り扱い::before,
 h2#本会議での主なやり取り::before,
 h2#賛否一覧::before {
@@ -112,9 +114,8 @@ h2#賛否一覧::before {
   box-shadow: 5px 5px 5px #999;
 
 }
-h2#提案理由の説明::before {  }
 h2#資料::before { content: "資"; }
-h2#主な質疑本会議付託委員会::before { content: "？"; }
+h2#主な質疑::before { content: "？"; }
 h2#付託委員会での取り扱い::before { content: "委"; }
 h2#本会議での主なやり取り::before { content: "本"; }
 h2#賛否一覧::before { content: "覧"; }
@@ -187,23 +188,19 @@ table {
 }
 
 /* point, nittei, sanpi, summary */
-fieldset.pnt {
+fieldset.pnt,
+fieldset.sanpi {
   margin-top: 0;
   margin-bottom: calc(var(--font-size)*2);
   padding: 0rem 1rem;
 }
 @media only screen and (min-width: 800px) {
-  fieldset.pnt {
-    padding: 0rem 3rem;
+  fieldset.pnt,
+  fieldset.sanpi {
+      padding: 0rem 3rem;
   }
 }
 
-
-fieldset.sanpi {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-  padding: 0rem 3rem;
-}
 
 fieldset.nittei,
 fieldset.summary {
@@ -251,7 +248,7 @@ fieldset.summary {
 }
 .sanpi li {
   text-indent: -3.5rem;
-  padding-left: 1.5rem;
+  padding-left: 2.5rem;
   margin-bottom:2rem;
 }
 
@@ -342,7 +339,7 @@ fieldset.nittei {
 
 #read-kaigiroku {
   position: relative;
-  top:1rem;
+  top:0.5rem;
   font-size: calc(var(--font-size)*1.2);
   text-align: right;
   margin: -1rem 0 0 0;
@@ -1305,53 +1302,82 @@ li:last-child {
   flex-direction: column;
 }
 
+.group h5 {
+  position:relative;
+}
+.group h5::after {
+  position:absolute;
+  top: -3rem;
+  left: 0;
+  content: var(--group-title);
+}
+/*最初のh5要素にはグループ名表示しない*/
+.group h4+h5::after {
+  content: none;
+}
+.group h4:first-child {
+  margin-bottom:4rem;
+  border: 1px dotted var(--fg);
+  width: fit-content;
+  padding: 1rem;
+}
+
 .ippan-situgi h3,
 .ippan-situgi h4,
 .ippan-situgi h5,
 .giin-gian-situgi h3,
 .giin-gian-situgi h4,
 .giin-gian-situgi h5 {
-/*  line-height: var(--line-height);*/
+  margin-bottom: calc(var(--font-size)*6);
+  /*  line-height: var(--line-height);*/
+/*
   border: 1px solid var(--fg);
   border-radius: 10px;
   font-weight: bold;
   text-align: left;
   margin-bottom: calc(var(--font-size)*6);
   padding: calc(var(--font-size)*1.2);
+  */
 }
 .ippan-situgi h4,
 .giin-gian-situgi h5 {
+  /*
   padding: 1rem;
   border-style: dashed;
+  */
 }
-/* 本会議、付託委員会ｎ質疑等 */
-.giin-gian-situgi h3 {
+/* 本会議、付託委員会の質疑等 */
+.ippan-situgi h3,
+.giin-gian-situgi h3,
+.giin-gian-situgi h4 {
+  font-weight: normal;
   border: none;
   margin: 2rem 0 5rem 0;
-  border-left: 1rem solid var(--links);
+  border-left: 5px solid var(--links);
   border-radius: 0;
   background-color: var(--bg);
-  padding: 1rem 0 1rem 2rem;
+  padding: 0.5rem 0 0.5rem 2rem;
   -webkit-box-shadow: 1px 1px 2px #999;
   box-shadow: 1px 1px 2px #999;
 }
 /* 議員側の質疑、理事者側の質疑等 */
+.ippan-situgi h3,
 .giin-gian-situgi h4 {
-  border: none;
-  margin: 2rem 0 5rem 0;
-  border-left: 0.5rem solid var(--links);
-  border-radius: 0;
-  background-color: var(--bg);
   padding: 0.5rem 0 0.5rem 3rem;
-  -webkit-box-shadow: 1px 1px 2px #999;
-  box-shadow: 1px 1px 2px #999;
+  margin-right:2rem;
 }
+/*
+.ippan-situgi h2+h3,
 .giin-gian-situgi h3+h4 {
   margin-top: -2rem;
 }
+.ippan-situgi h3+h4,
 .giin-gian-situgi h4+h5 {
   margin-top:0;
 }
+*/
+.ippan-situgi h4,
+.ippan-situgi h5,
 .giin-gian-situgi h5 {
   display: flex;
   align-content: center;
@@ -1361,7 +1387,10 @@ li:last-child {
   border-bottom: 1px dashed;
   border-top: 1px dashed;
   text-align: left;
+  padding: 1rem;
 }
+.ippan-situgi h4::before,
+.ippan-situgi h5::before,
 .giin-gian-situgi h5::before {
   content: "?";
   font-size: 3rem;
@@ -1373,18 +1402,25 @@ li:last-child {
   transform: rotate(12deg) translate3d(0, 0, 0);
   transform-origin: 50% 50%;
 }
+.ippan-situgi h4 a,
+.ippan-situgi h5 a,
 .giin-gian-situgi h5 a {
   display: inline-block;
   margin-left: 3rem;
 }
 
-.ippan-situgi h5,
-.giin-gian-situgi h6 {
-  padding: 1rem;
-  border-style: none;
-  border-bottom-style: dotted;
-  border-radius:0;
+.ippan-situgi .group h4 {
+  display: block;
 }
+.ippan-situgi .group h4::before,
+.ippan-situgi .group h4::after {
+  content: none;
+}
+.ippan-situgi .group h4 a {
+  margin-left:0;
+}
+
+
 .ippan-situgi li:not(:last-child),
 .giin-gian-situgi li:not(:last-child) {
   padding-bottom: calc(var(--font-size)*1.5);
@@ -1402,14 +1438,15 @@ li:last-child {
 .ippan-situgi h5+ul, 
 .ippan-situgi h3+div,
 .ippan-situgi h4+div,
-.ippan-situgi h5+div { margin-top: calc(var(--font-size)*-4); }
+.ippan-situgi h5+div { margin-top: calc(var(--font-size)*-2); }
 .ippan-situgi h3+p+div.bln.bleft { margin-top: calc(var(--font-size)*4); }
 
 .ippan-situgi div.bln+h3,
-.ippan-situgi div.bln+h4　{
-  margin-top: calc(var(--font-size));
+.ippan-situgi div.bln+h4 {
+  margin-top: calc(var(--font-size)*-2);
 }
 
+.giin-gian-situgi h3+h4,
 .giin-gian-situgi h5+h6,
 .giin-gian-situgi h3+p,
 .giin-gian-situgi h4+p,
@@ -1419,12 +1456,14 @@ li:last-child {
 .giin-gian-situgi h5+ul, 
 .giin-gian-situgi h3+div,
 .giin-gian-situgi h4+div,
-.giin-gian-situgi h5+div { margin-top: calc(var(--font-size)*-4); }
+.giin-gian-situgi h5+div { margin-top: calc(var(--font-size)*-2); }
 .giin-gian-situgi h3+p+div.bln.bleft { margin-top: calc(var(--font-size)*4); }
 
+.giin-gian-situgi h4+h5 { margin-top: calc(var(--font-size)*-2); }
+
 .giin-gian-situgi div.bln+h3,
-.giin-gian-situgi div.bln+h4　{
-  margin-top: calc(var(--font-size));
+.giin-gian-situgi div.bln+h4 {
+  margin-top: calc(var(--font-size)*-2);
 }
 
 
